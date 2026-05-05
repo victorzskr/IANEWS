@@ -1,9 +1,5 @@
 # Dependencies
 node_modules/
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
-bun.lockb
 
 # Build outputs
 dist/
@@ -29,11 +25,13 @@ pnpm-debug.log*
 # Testing and coverage
 coverage/
 .nyc_output/
+test-results/
 
 # Cache
 .cache/
 .parcel-cache/
 .vite/
+.astro/
 .turbo/
 
 # IDE and editor files
