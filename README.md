@@ -1,4 +1,4 @@
-# AgoraAI 📰
+# AgoraAI 📰 (https://aiagora.netlify.app/)
 
 AgoraAI es una aplicacion web minimalista para seguir noticias relevantes sobre inteligencia artificial, pensada especialmente para desarrolladores.
 
