@@ -70,7 +70,7 @@ test("shows an empty state when search has no matches", async ({ page }) => {
   ).toBeVisible();
 });
 
-test("renders external source links safely", async ({ page }) => {
+test("opens external source links in a new tab safely", async ({ context, page }) => {
   await page.goto("/");
 
   const sourceLink = page
@@ -79,5 +79,16 @@ test("renders external source links safely", async ({ page }) => {
 
   await expect(sourceLink).toHaveAttribute("href", /^https:\/\//);
   await expect(sourceLink).toHaveAttribute("target", "_blank");
-  await expect(sourceLink).toHaveAttribute("rel", "noreferrer");
+  await expect(sourceLink).toHaveAttribute("rel", /noopener/);
+  await expect(sourceLink).toHaveAttribute("rel", /noreferrer/);
+  await expect(sourceLink).toHaveAttribute("rel", /external/);
+
+  const [newPage] = await Promise.all([
+    context.waitForEvent("page"),
+    sourceLink.click()
+  ]);
+
+  await expect(page).toHaveURL("/");
+  expect(newPage.url()).not.toBe(page.url());
+  await newPage.close();
 });

@@ -80,6 +80,19 @@ describe("news domain", () => {
   it("keeps repository news free of duplicate ids, urls and titles", () => {
     expect(findDuplicateNewsIssues(getNewsItems())).toEqual([]);
   });
+
+  it("uses direct X post urls instead of X search urls", () => {
+    const xItems = getNewsItems().filter((item) => item.source === "X");
+
+    expect(xItems.length).toBeGreaterThan(0);
+    expect(
+      xItems.every(
+        (item) =>
+          /^https:\/\/x\.com\/[^/]+\/status\/\d+/.test(item.url) &&
+          !item.url.includes("/search")
+      )
+    ).toBe(true);
+  });
 });
 
 describe("news curation safeguards", () => {

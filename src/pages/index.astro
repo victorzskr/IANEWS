@@ -37,6 +37,9 @@ const updateStatus = formatUpdateStatus(getLatestPublishedAt(newsItems));
       const groups = Array.from(document.querySelectorAll<HTMLElement>("[data-timeline-group]"));
       const emptyState = document.querySelector<HTMLElement>("#empty-state");
       const timeline = document.querySelector<HTMLElement>("#timeline");
+      const sourceLinks = Array.from(
+        document.querySelectorAll<HTMLAnchorElement>("[data-source-link]")
+      );
 
       function normalizeSearchText(value: string): string {
         return value
@@ -89,6 +92,17 @@ const updateStatus = formatUpdateStatus(getLatestPublishedAt(newsItems));
       }
 
       searchInput?.addEventListener("input", updateTimelineVisibility);
+
+      for (const sourceLink of sourceLinks) {
+        sourceLink.addEventListener("click", (event) => {
+          if (event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) {
+            return;
+          }
+
+          event.preventDefault();
+          window.open(sourceLink.href, "_blank", "noopener,noreferrer");
+        });
+      }
     </script>
   </body>
 </html>

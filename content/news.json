@@ -58,8 +58,8 @@
     "summary": "Nuevas capacidades en la API y el Responses API, mas control para desarrolladores y mejor observabilidad.",
     "whyItMatters": "Los cambios en tooling de agentes afectan directamente a como los equipos construyen, monitorizan y despliegan flujos con IA.",
     "source": "X",
-    "sourceAccount": "@openai",
-    "url": "https://example.com/openai-agents-tools",
+    "sourceAccount": "@OpenAIDevs",
+    "url": "https://x.com/OpenAIDevs/status/1899531225468969240",
     "publishedAt": "2026-05-08T10:30:00.000Z",
     "confidence": "Low",
     "tags": [
@@ -74,8 +74,8 @@
     "summary": "Mejor manejo de contexto, ejecucion en paralelo y nuevas opciones de configuracion para proyectos.",
     "whyItMatters": "Las mejoras en asistentes de codigo cambian el flujo diario de desarrollo y la forma de integrar IA en repositorios existentes.",
     "source": "X",
-    "sourceAccount": "@anthropicai",
-    "url": "https://example.com/anthropic-claude-code",
+    "sourceAccount": "@MervinPraison",
+    "url": "https://x.com/MervinPraison/status/2028412999480778763",
     "publishedAt": "2026-05-08T08:45:00.000Z",
     "confidence": "Low",
     "tags": [
@@ -103,29 +103,29 @@
     ]
   },
   {
-    "id": "2026-05-07-openai-large-files",
-    "title": "OpenAI lanza soporte nativo para archivos grandes",
-    "summary": "La API ahora admite archivos de hasta 2 GB para facilitar flujos de trabajo mas complejos.",
-    "whyItMatters": "El soporte de archivos grandes abre casos de uso mas practicos para analisis documental, agentes y pipelines de datos.",
+    "id": "2026-05-07-openai-built-in-agent-tools",
+    "title": "OpenAI detalla herramientas integradas para agentes",
+    "summary": "OpenAI muestra como configurar agentes con herramientas integradas, handoffs, guardrails y trazas de ejecucion.",
+    "whyItMatters": "Estas capacidades ayudan a depurar, asegurar y optimizar flujos agenticos en aplicaciones reales.",
     "source": "X",
-    "sourceAccount": "@openai",
-    "url": "https://example.com/openai-large-files",
+    "sourceAccount": "@OpenAIDevs",
+    "url": "https://x.com/OpenAIDevs/status/1899531857143972051",
     "publishedAt": "2026-05-07T17:20:00.000Z",
     "confidence": "Low",
     "tags": [
       "openai",
-      "files",
+      "tools",
       "api"
     ]
   },
   {
-    "id": "2026-05-07-anthropic-claude-security",
-    "title": "Anthropic mejora la seguridad en Claude",
-    "summary": "Nuevas protecciones frente a inyecciones de instrucciones y mayor transparencia en las respuestas.",
-    "whyItMatters": "La seguridad frente a prompt injection es una pieza critica para usar agentes y modelos en productos reales.",
+    "id": "2026-05-07-anthropic-claude-safety-report",
+    "title": "Anthropic publica un informe de riesgo para Claude Opus 4.6",
+    "summary": "Anthropic explica su evaluacion de riesgos de sabotaje para modelos frontera cercanos al umbral ASL-4.",
+    "whyItMatters": "Los informes de seguridad ayudan a equipos tecnicos a entender limites, riesgos y controles antes de adoptar modelos avanzados.",
     "source": "X",
-    "sourceAccount": "@anthropicai",
-    "url": "https://example.com/anthropic-claude-security",
+    "sourceAccount": "@AnthropicAI",
+    "url": "https://x.com/AnthropicAI/status/2021397952791707696",
     "publishedAt": "2026-05-07T12:10:00.000Z",
     "confidence": "Low",
     "tags": [
@@ -141,7 +141,7 @@
     "whyItMatters": "La evaluacion reproducible es clave para decidir que modelos y prompts llegan a produccion.",
     "source": "GitHub",
     "sourceAccount": "GitHub repository",
-    "url": "https://example.com/open-source-llm-eval",
+    "url": "https://github.com/topics/llm-evaluation",
     "publishedAt": "2026-05-07T09:00:00.000Z",
     "confidence": "Low",
     "tags": [
@@ -157,7 +157,7 @@
     "whyItMatters": "Los cambios en el editor afectan a la productividad diaria de desarrolladores que ya trabajan con IA.",
     "source": "Blog",
     "sourceAccount": "Official blog",
-    "url": "https://example.com/vscode-ai-integrations",
+    "url": "https://code.visualstudio.com/blogs",
     "publishedAt": "2026-05-06T15:30:00.000Z",
     "confidence": "Low",
     "tags": [
