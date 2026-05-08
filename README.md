@@ -1,12 +1,12 @@
 # AgoraAI
 
-AgoraAI es una aplicacion web minimalista para desarrolladores que quieren estar al dia de las noticias mas relevantes sobre inteligencia artificial.
+AgoraAI es una aplicacion web minimalista para seguir noticias relevantes sobre inteligencia artificial, pensada especialmente para desarrolladores.
 
-La primera version se centra en una experiencia sencilla de timeline. Las noticias se cargan desde `content/news.json`, se validan durante el build y cada item enlaza directamente a su fuente original.
+La primera version se centra en una experiencia sencilla de timeline. Las noticias se cargan desde `content/news.json`, se validan durante el build y cada item enlaza directamente a su fuente original. ⚡
 
 ## Idea del producto
 
-Los desarrolladores que trabajan con herramientas, modelos, agentes, APIs e infraestructura de IA necesitan una forma ligera de seguir novedades importantes sin revisar varias fuentes cada dia. AgoraAI busca ofrecer una timeline diaria, enfocada y facil de consultar.
+Se necesita una forma ligera de seguir novedades importantes sin revisar varias fuentes cada dia. AgoraAI ofrece una timeline diaria, enfocada y facil de consultar para quienes trabajan con herramientas, modelos, agentes, APIs e infraestructura de IA.
 
 ## Alcance inicial
 
@@ -48,14 +48,14 @@ La estructura inicial del JSON puede verse asi:
 ]
 ```
 
-## Desarrollo local
+## Desarrollo local 🛠️
 
 ```bash
 pnpm install
 pnpm dev
 ```
 
-Comandos utiles:
+Comandos utiles para validar el proyecto:
 
 - `pnpm build`: valida y compila el proyecto.
 - `pnpm check`: ejecuta las comprobaciones de Astro.
@@ -64,7 +64,7 @@ Comandos utiles:
 
 ## Flujo de contenido
 
-La curacion diaria se gestiona con el heartbeat `daily-content-curation-agoraai`. Propone noticias nuevas que no esten duplicadas, espera aprobacion y despues la actualizacion aprobada se valida, commitea y publica.
+La curacion diaria se gestiona con el heartbeat `daily-content-curation-agoraai`. Se proponen noticias nuevas que no esten duplicadas, se espera aprobacion y despues la actualizacion aprobada se valida, commitea y publica.
 
 Consulta `docs/content-curation-workflow.md` para ver el flujo completo.
 
@@ -77,4 +77,4 @@ Consulta `docs/content-curation-workflow.md` para ver el flujo completo.
 
 ## Estado
 
-El proyecto ya cuenta con una timeline estatica funcional, buscador, checks de CI y un workflow de curacion de contenido con aprobacion humana.
+El proyecto cuenta con una timeline estatica funcional, buscador, checks de CI y un workflow de curacion de contenido con aprobacion humana.
