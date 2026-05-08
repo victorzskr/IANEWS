@@ -1,7 +1,19 @@
 ---
+import AppHeader from "../modules/news/presentation/AppHeader.astro";
+import Timeline from "../modules/news/presentation/Timeline.astro";
 import "../styles/global.css";
+import {
+  createTimelineGroups,
+  formatUpdateStatus,
+  getLatestPublishedAt
+} from "../modules/news/application/news-timeline";
+import { getNewsItems } from "../modules/news/infrastructure/json-news-repository";
 
 const title = "IANEWS";
+const description = "A minimal timeline for AI development news.";
+const newsItems = getNewsItems();
+const timelineGroups = createTimelineGroups(newsItems);
+const updateStatus = formatUpdateStatus(getLatestPublishedAt(newsItems));
 ---
 
 <!doctype html>
@@ -9,15 +21,74 @@ const title = "IANEWS";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="A minimal timeline for AI development news."
-    />
+    <meta name="description" content={description} />
     <title>{title}</title>
   </head>
-  <body>
-    <main class="min-h-screen bg-neutral-950 px-6 py-16 text-neutral-50">
-      <p>Hello world from IANEWS.</p>
+  <body class="min-h-screen bg-[#05060a] text-neutral-50 antialiased">
+    <main class="relative min-h-screen overflow-hidden">
+      <div class="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.08),transparent_28%),linear-gradient(180deg,rgba(5,6,10,0)_0%,#05060a_80%)]"></div>
+      <div class="pointer-events-none fixed inset-0 opacity-[0.035] [background-image:linear-gradient(#fff_1px,transparent_1px),linear-gradient(90deg,#fff_1px,transparent_1px)] [background-size:48px_48px]"></div>
+      <AppHeader updateStatus={updateStatus} />
+      <Timeline groups={timelineGroups} />
     </main>
+    <script>
+      const searchInput = document.querySelector<HTMLInputElement>("#news-search");
+      const cards = Array.from(document.querySelectorAll<HTMLElement>("[data-news-card]"));
+      const groups = Array.from(document.querySelectorAll<HTMLElement>("[data-timeline-group]"));
+      const emptyState = document.querySelector<HTMLElement>("#empty-state");
+      const timeline = document.querySelector<HTMLElement>("#timeline");
+
+      function normalizeSearchText(value: string): string {
+        return value
+          .normalize("NFD")
+          .replace(/\p{Diacritic}/gu, "")
+          .toLowerCase()
+          .trim();
+      }
+
+      function getSearchableText(card: HTMLElement): string {
+        return normalizeSearchText(
+          [
+            card.dataset.title,
+            card.dataset.summary,
+            card.dataset.source,
+            card.dataset.sourceAccount,
+            card.dataset.whyItMatters,
+            card.dataset.tags
+          ]
+            .filter(Boolean)
+            .join(" ")
+        );
+      }
+
+      function updateTimelineVisibility(): void {
+        const query = normalizeSearchText(searchInput?.value ?? "");
+        let visibleCards = 0;
+
+        for (const card of cards) {
+          const isVisible = !query || getSearchableText(card).includes(query);
+          const row = card.closest<HTMLElement>("[data-timeline-row]");
+
+          row?.classList.toggle("hidden", !isVisible);
+
+          if (isVisible) {
+            visibleCards += 1;
+          }
+        }
+
+        for (const group of groups) {
+          const hasVisibleRows = Boolean(
+            group.querySelector("[data-timeline-row]:not(.hidden)")
+          );
+
+          group.classList.toggle("hidden", !hasVisibleRows);
+        }
+
+        emptyState?.classList.toggle("hidden", visibleCards > 0);
+        timeline?.classList.toggle("hidden", visibleCards === 0);
+      }
+
+      searchInput?.addEventListener("input", updateTimelineVisibility);
+    </script>
   </body>
 </html>

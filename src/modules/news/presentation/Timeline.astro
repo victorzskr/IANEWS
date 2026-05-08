@@ -1,0 +1,101 @@
+---
+import type { TimelineGroup } from "../domain/news-item";
+import NewsCard from "./NewsCard.astro";
+
+interface Props {
+  groups: TimelineGroup[];
+}
+
+const { groups } = Astro.props;
+
+const accentStyles = {
+  lime: {
+    label: "border-lime-300 text-lime-300 shadow-[0_0_22px_rgba(190,242,100,0.25)]",
+    dot: "border-lime-300 bg-lime-300 shadow-[0_0_20px_rgba(190,242,100,0.85)]",
+    line: "bg-lime-300/40"
+  },
+  cyan: {
+    label: "border-cyan-300 text-cyan-300 shadow-[0_0_22px_rgba(103,232,249,0.2)]",
+    dot: "border-cyan-300 bg-cyan-300 shadow-[0_0_20px_rgba(103,232,249,0.75)]",
+    line: "bg-cyan-300/40"
+  },
+  neutral: {
+    label: "border-neutral-500 text-neutral-300",
+    dot: "border-neutral-400 bg-neutral-400 shadow-[0_0_16px_rgba(212,212,212,0.35)]",
+    line: "bg-neutral-400/30"
+  }
+};
+
+const lastNewsId = groups.at(-1)?.items.at(-1)?.id;
+---
+
+<section class="mx-auto w-full max-w-7xl px-5 pb-20 pt-36 sm:px-8 lg:pt-32" aria-label="AI development news timeline">
+  <div id="empty-state" class="hidden rounded-lg border border-white/10 bg-white/[0.04] px-6 py-10 text-center text-neutral-300">
+    No hay noticias que coincidan con la búsqueda.
+  </div>
+
+  <div id="timeline" class="relative mx-auto max-w-5xl pl-0">
+    <div class="absolute left-5 top-10 h-[calc(100%-2.5rem)] w-px bg-white/20 lg:left-1/2"></div>
+
+    {
+      groups.map((group) => (
+        <section class="timeline-group" data-timeline-group>
+          <div class="relative my-8 flex justify-start pl-0 lg:justify-center">
+            <span
+              class:list={[
+                "relative z-10 rounded-full border bg-[#05060a] px-5 py-2 text-base font-semibold leading-none",
+                accentStyles[group.accent].label
+              ]}
+            >
+              {group.label}
+            </span>
+          </div>
+
+          <div class="space-y-8 lg:space-y-10">
+            {group.items.map((item, itemIndex) => {
+              const side = itemIndex % 2 === 0 ? "right" : "left";
+              const isLastItem = item.id === lastNewsId;
+
+              return (
+                <div
+                  class:list={[
+                    "timeline-row relative grid items-center gap-5 pl-16 lg:grid-cols-[minmax(0,1fr)_88px_minmax(0,1fr)] lg:gap-0 lg:pl-0",
+                    side === "left" ? "lg:[&_.card-slot]:col-start-1 lg:[&_.card-slot]:row-start-1" : "lg:[&_.card-slot]:col-start-3 lg:[&_.card-slot]:row-start-1"
+                  ]}
+                  data-timeline-row
+                >
+                  {
+                    isLastItem && (
+                      <div
+                        class="absolute left-5 top-7 z-[1] h-full w-px bg-[#05060a] lg:left-1/2"
+                        aria-hidden="true"
+                      ></div>
+                    )
+                  }
+                  <div
+                    class:list={[
+                      "absolute left-5 top-7 z-[2] h-px w-11 bg-white/20 lg:left-1/2",
+                      side === "left" ? "lg:-translate-x-11" : "lg:translate-x-0"
+                    ]}
+                  ></div>
+                  <div
+                    class:list={[
+                      "absolute left-2 top-4 z-10 flex size-7 items-center justify-center rounded-full border bg-[#05060a] lg:left-1/2 lg:size-6 lg:-translate-x-1/2",
+                      accentStyles[group.accent].dot
+                    ]}
+                    aria-hidden="true"
+                  >
+                    <span class="size-2 rounded-full bg-[#05060a]"></span>
+                  </div>
+                  <div class="card-slot">
+                    <NewsCard item={item} accent={group.accent} side={side} />
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+      ))
+    }
+  </div>
+</section>

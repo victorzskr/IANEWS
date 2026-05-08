@@ -2,7 +2,7 @@
 
 IANEWS is a minimal web application for developers who want to stay up to date with the most relevant daily news about building with artificial intelligence.
 
-The first version will focus on a simple timeline experience. News items will be loaded from a manually maintained data file, such as JSON, and each item in the timeline will link directly to the original source.
+The first version focuses on a simple timeline experience. News items are loaded from `content/news.json`, validated at build time, and each item in the timeline links directly to the original source.
 
 ## Product Idea
 
@@ -14,12 +14,12 @@ Developers working with AI tools, models, agents, APIs, and infrastructure need 
 - Timeline-only layout.
 - Daily news loaded from a static JSON file.
 - Each news item opens the original article or post.
-- Manual content updates at first.
-- Future heartbeat workflow to help collect and refresh the day's most relevant news.
+- Human-approved content updates from a daily Codex heartbeat.
+- Editorial metadata for source account, confidence and why each item matters.
 
 ## Content Sources
 
-The initial source will be X, with the goal of tracking relevant updates from AI development accounts and communities.
+The initial source is X, with the goal of tracking relevant updates from AI development accounts and communities.
 
 In the future, the project may expand to additional sources such as:
 
@@ -47,15 +47,19 @@ The first JSON structure may look like this:
 ]
 ```
 
+## Content Workflow
+
+Daily curation is handled by the `daily-content-curation-ianews` heartbeat. It proposes new non-duplicate items, waits for approval, then the approved update is committed and pushed after validation.
+
+See `docs/content-curation-workflow.md` for the full workflow.
+
 ## Roadmap
 
-1. Create the static web interface.
-2. Add the timeline component.
-3. Load news from a local JSON file.
-4. Add sample daily news data.
-5. Configure a heartbeat workflow for manual or assisted updates.
-6. Explore additional sources beyond X.
+1. Expand real source coverage beyond X.
+2. Replace sample URLs with approved live sources.
+3. Add deploy automation after CI.
+4. Add richer source filters and archive views.
 
 ## Status
 
-This project is in the planning and initialization stage.
+This project has a working static timeline, CI checks and a human-approved content curation workflow.
