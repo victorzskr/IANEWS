@@ -77,7 +77,7 @@ test("renders external source links safely", async ({ page }) => {
     .getByRole("link", { name: /Leer fuente/ })
     .first();
 
-  await expect(sourceLink).toHaveAttribute("href", /https:\/\/example\.com\//);
+  await expect(sourceLink).toHaveAttribute("href", /^https:\/\//);
   await expect(sourceLink).toHaveAttribute("target", "_blank");
   await expect(sourceLink).toHaveAttribute("rel", "noreferrer");
 });

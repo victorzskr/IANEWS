@@ -1,5 +1,58 @@
 [
   {
+    "id": "2026-05-08-openai-realtime-voice-models",
+    "title": "OpenAI lanza nuevos modelos realtime de voz en la API",
+    "summary": "OpenAI presento GPT-Realtime-2, GPT-Realtime-Translate y GPT-Realtime-Whisper para agentes de voz, traduccion en vivo y transcripcion streaming.",
+    "whyItMatters": "Es una pieza importante para equipos que construyen voice agents, soporte conversacional, productos multilingues o interfaces realtime sobre la API.",
+    "source": "Blog",
+    "sourceAccount": "OpenAI",
+    "url": "https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api/",
+    "publishedAt": "2026-05-08T16:00:00.000Z",
+    "confidence": "High",
+    "tags": [
+      "openai",
+      "api",
+      "voice",
+      "realtime",
+      "agents"
+    ]
+  },
+  {
+    "id": "2026-05-08-codeql-2-25-3-swift-6-3",
+    "title": "GitHub CodeQL 2.25.3 añade soporte para Swift 6.3",
+    "summary": "GitHub actualizo CodeQL con soporte para Swift 6.3 y mejoras para Python, Java/Kotlin, C/C++, JavaScript/TypeScript y GitHub Actions.",
+    "whyItMatters": "Afecta directamente a equipos que dependen de code scanning y seguridad automatizada dentro de CI.",
+    "source": "GitHub",
+    "sourceAccount": "GitHub Changelog",
+    "url": "https://github.blog/changelog/2026-05-08-codeql-2-25-3-adds-swift-6-3-support/",
+    "publishedAt": "2026-05-08T15:00:00.000Z",
+    "confidence": "High",
+    "tags": [
+      "github",
+      "codeql",
+      "security",
+      "ci"
+    ]
+  },
+  {
+    "id": "2026-05-08-gemini-api-file-search-multimodal",
+    "title": "Gemini API File Search pasa a ser multimodal",
+    "summary": "Google amplio File Search en Gemini API con soporte multimodal, filtros de metadata personalizados y citas por pagina.",
+    "whyItMatters": "Facilita construir RAG verificable con documentos, imagenes y datos no estructurados sin mantener toda la infraestructura desde cero.",
+    "source": "Blog",
+    "sourceAccount": "Google Developers Blog",
+    "url": "https://blog.google/innovation-and-ai/technology/developers-tools/expanded-gemini-api-file-search-multimodal-rag/",
+    "publishedAt": "2026-05-08T14:00:00.000Z",
+    "confidence": "High",
+    "tags": [
+      "google",
+      "gemini",
+      "rag",
+      "file-search",
+      "multimodal"
+    ]
+  },
+  {
     "id": "2026-05-08-openai-agents-tools",
     "title": "OpenAI actualiza sus herramientas para agentes",
     "summary": "Nuevas capacidades en la API y el Responses API, mas control para desarrolladores y mejor observabilidad.",
@@ -9,7 +62,11 @@
     "url": "https://example.com/openai-agents-tools",
     "publishedAt": "2026-05-08T10:30:00.000Z",
     "confidence": "Low",
-    "tags": ["agents", "openai", "api"]
+    "tags": [
+      "agents",
+      "openai",
+      "api"
+    ]
   },
   {
     "id": "2026-05-08-anthropic-claude-code",
@@ -21,7 +78,29 @@
     "url": "https://example.com/anthropic-claude-code",
     "publishedAt": "2026-05-08T08:45:00.000Z",
     "confidence": "Low",
-    "tags": ["claude", "coding", "developer-tools"]
+    "tags": [
+      "claude",
+      "coding",
+      "developer-tools"
+    ]
+  },
+  {
+    "id": "2026-05-07-github-copilot-cli-rubber-duck-models",
+    "title": "Rubber Duck en GitHub Copilot CLI ahora usa modelos cruzados",
+    "summary": "GitHub amplio Rubber Duck para que sesiones con GPT puedan recibir una segunda opinion de Claude y sesiones con Claude puedan apoyarse en GPT-5.5.",
+    "whyItMatters": "Refuerza la tendencia hacia asistentes de codigo multi-modelo para detectar errores sutiles, conflictos entre archivos y problemas de arquitectura.",
+    "source": "GitHub",
+    "sourceAccount": "GitHub Changelog",
+    "url": "https://github.blog/changelog/2026-05-07-rubber-duck-in-github-copilot-cli-now-supports-more-models/",
+    "publishedAt": "2026-05-07T18:00:00.000Z",
+    "confidence": "High",
+    "tags": [
+      "github",
+      "copilot",
+      "cli",
+      "agents",
+      "developer-tools"
+    ]
   },
   {
     "id": "2026-05-07-openai-large-files",
@@ -33,7 +112,11 @@
     "url": "https://example.com/openai-large-files",
     "publishedAt": "2026-05-07T17:20:00.000Z",
     "confidence": "Low",
-    "tags": ["openai", "files", "api"]
+    "tags": [
+      "openai",
+      "files",
+      "api"
+    ]
   },
   {
     "id": "2026-05-07-anthropic-claude-security",
@@ -45,7 +128,11 @@
     "url": "https://example.com/anthropic-claude-security",
     "publishedAt": "2026-05-07T12:10:00.000Z",
     "confidence": "Low",
-    "tags": ["claude", "security", "safety"]
+    "tags": [
+      "claude",
+      "security",
+      "safety"
+    ]
   },
   {
     "id": "2026-05-07-open-source-llm-eval",
@@ -57,7 +144,11 @@
     "url": "https://example.com/open-source-llm-eval",
     "publishedAt": "2026-05-07T09:00:00.000Z",
     "confidence": "Low",
-    "tags": ["llm", "evaluation", "open-source"]
+    "tags": [
+      "llm",
+      "evaluation",
+      "open-source"
+    ]
   },
   {
     "id": "2026-05-06-vscode-ai-integrations",
@@ -69,6 +160,10 @@
     "url": "https://example.com/vscode-ai-integrations",
     "publishedAt": "2026-05-06T15:30:00.000Z",
     "confidence": "Low",
-    "tags": ["vscode", "ai", "developer-tools"]
+    "tags": [
+      "vscode",
+      "ai",
+      "developer-tools"
+    ]
   }
 ]
