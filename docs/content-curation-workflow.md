@@ -1,10 +1,10 @@
-# IANEWS content curation workflow
+# AgoraAI content curation workflow
 
-IANEWS uses a human-approved daily curation workflow.
+AgoraAI uses a human-approved daily curation workflow.
 
 ## Daily heartbeat
 
-The active Codex heartbeat is `daily-content-curation-ianews`.
+The active Codex heartbeat is `daily-content-curation-agoraai`.
 
 Every day it should:
 

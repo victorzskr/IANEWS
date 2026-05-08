@@ -1,9 +1,9 @@
 import { expect, test } from "@playwright/test";
 
-test("renders the IANEWS timeline", async ({ page }) => {
+test("renders the AgoraAI timeline", async ({ page }) => {
   await page.goto("/");
 
-  await expect(page.getByRole("link", { name: "IANEWS home" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "AgoraAI home" })).toBeVisible();
   await expect(page.getByPlaceholder("Buscar noticias...")).toBeVisible();
   await expect(page.getByText(/Actualizado/)).toBeVisible();
   await expect(page.getByText("Hoy")).toBeVisible();

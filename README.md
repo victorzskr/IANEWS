@@ -1,12 +1,12 @@
-# IANEWS
+# AgoraAI
 
-IANEWS is a minimal web application for developers who want to stay up to date with the most relevant daily news about building with artificial intelligence.
+AgoraAI is a minimal web application for developers who want to stay up to date with the most relevant daily news about building with artificial intelligence.
 
 The first version focuses on a simple timeline experience. News items are loaded from `content/news.json`, validated at build time, and each item in the timeline links directly to the original source.
 
 ## Product Idea
 
-Developers working with AI tools, models, agents, APIs, and infrastructure need a lightweight way to follow meaningful updates without browsing several feeds every day. IANEWS aims to provide a focused daily timeline of relevant AI development news.
+Developers working with AI tools, models, agents, APIs, and infrastructure need a lightweight way to follow meaningful updates without browsing several feeds every day. AgoraAI aims to provide a focused daily timeline of relevant AI development news.
 
 ## Initial Scope
 
@@ -49,7 +49,7 @@ The first JSON structure may look like this:
 
 ## Content Workflow
 
-Daily curation is handled by the `daily-content-curation-ianews` heartbeat. It proposes new non-duplicate items, waits for approval, then the approved update is committed and pushed after validation.
+Daily curation is handled by the `daily-content-curation-agoraai` heartbeat. It proposes new non-duplicate items, waits for approval, then the approved update is committed and pushed after validation.
 
 See `docs/content-curation-workflow.md` for the full workflow.
 
