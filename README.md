@@ -1,37 +1,38 @@
 # AgoraAI
 
-AgoraAI is a minimal web application for developers who want to stay up to date with the most relevant daily news about building with artificial intelligence.
+AgoraAI es una aplicacion web minimalista para desarrolladores que quieren estar al dia de las noticias mas relevantes sobre inteligencia artificial.
 
-The first version focuses on a simple timeline experience. News items are loaded from `content/news.json`, validated at build time, and each item in the timeline links directly to the original source.
+La primera version se centra en una experiencia sencilla de timeline. Las noticias se cargan desde `content/news.json`, se validan durante el build y cada item enlaza directamente a su fuente original.
 
-## Product Idea
+## Idea del producto
 
-Developers working with AI tools, models, agents, APIs, and infrastructure need a lightweight way to follow meaningful updates without browsing several feeds every day. AgoraAI aims to provide a focused daily timeline of relevant AI development news.
+Los desarrolladores que trabajan con herramientas, modelos, agentes, APIs e infraestructura de IA necesitan una forma ligera de seguir novedades importantes sin revisar varias fuentes cada dia. AgoraAI busca ofrecer una timeline diaria, enfocada y facil de consultar.
 
-## Initial Scope
+## Alcance inicial
 
-- Minimal web interface.
-- Timeline-only layout.
-- Daily news loaded from a static JSON file.
-- Each news item opens the original article or post.
-- Human-approved content updates from a daily Codex heartbeat.
-- Editorial metadata for source account, confidence and why each item matters.
+- Interfaz web minimalista.
+- Layout basado en timeline.
+- Buscador para filtrar noticias.
+- Noticias cargadas desde un archivo JSON estatico.
+- Cada noticia abre el articulo o post original.
+- Actualizaciones de contenido aprobadas por una persona mediante un heartbeat diario de Codex.
+- Metadatos editoriales para fuente, cuenta, confianza y por que importa cada noticia.
 
-## Content Sources
+## Fuentes de contenido
 
-The initial source is X, with the goal of tracking relevant updates from AI development accounts and communities.
+La fuente inicial es X, con el objetivo de seguir actualizaciones relevantes de cuentas y comunidades relacionadas con desarrollo en IA.
 
-In the future, the project may expand to additional sources such as:
+En el futuro, el proyecto puede ampliarse a otras fuentes como:
 
-- AI company blogs.
-- Engineering blogs.
-- Product release feeds.
-- RSS feeds.
-- Public websites that allow scraping.
+- Blogs de empresas de IA.
+- Blogs de ingenieria.
+- Feeds de lanzamientos de producto.
+- RSS.
+- Webs publicas que permitan scraping.
 
-## Data Model Draft
+## Modelo de datos
 
-The first JSON structure may look like this:
+La estructura inicial del JSON puede verse asi:
 
 ```json
 [
@@ -47,19 +48,33 @@ The first JSON structure may look like this:
 ]
 ```
 
-## Content Workflow
+## Desarrollo local
 
-Daily curation is handled by the `daily-content-curation-agoraai` heartbeat. It proposes new non-duplicate items, waits for approval, then the approved update is committed and pushed after validation.
+```bash
+pnpm install
+pnpm dev
+```
 
-See `docs/content-curation-workflow.md` for the full workflow.
+Comandos utiles:
+
+- `pnpm build`: valida y compila el proyecto.
+- `pnpm check`: ejecuta las comprobaciones de Astro.
+- `pnpm test:unit`: ejecuta los tests unitarios.
+- `pnpm test:e2e`: ejecuta los tests end-to-end.
+
+## Flujo de contenido
+
+La curacion diaria se gestiona con el heartbeat `daily-content-curation-agoraai`. Propone noticias nuevas que no esten duplicadas, espera aprobacion y despues la actualizacion aprobada se valida, commitea y publica.
+
+Consulta `docs/content-curation-workflow.md` para ver el flujo completo.
 
 ## Roadmap
 
-1. Expand real source coverage beyond X.
-2. Replace sample URLs with approved live sources.
-3. Add deploy automation after CI.
-4. Add richer source filters and archive views.
+1. Ampliar la cobertura real mas alla de X.
+2. Sustituir URLs de ejemplo por fuentes aprobadas en vivo.
+3. Anadir automatizacion de deploy despues de CI.
+4. Incorporar filtros mas completos y vistas de archivo.
 
-## Status
+## Estado
 
-This project has a working static timeline, CI checks and a human-approved content curation workflow.
+El proyecto ya cuenta con una timeline estatica funcional, buscador, checks de CI y un workflow de curacion de contenido con aprobacion humana.
