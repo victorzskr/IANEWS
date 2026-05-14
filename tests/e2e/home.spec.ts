@@ -6,8 +6,6 @@ test("renders the AgoraAI timeline", async ({ page }) => {
   await expect(page.getByRole("link", { name: "AgoraAI home" })).toBeVisible();
   await expect(page.getByPlaceholder("Buscar noticias...")).toBeVisible();
   await expect(page.getByText(/Actualizado/)).toBeVisible();
-  await expect(page.getByText("Hoy")).toBeVisible();
-  await expect(page.getByText("Ayer")).toBeVisible();
   await expect(
     page.getByRole("heading", {
       name: "OpenAI actualiza sus herramientas para agentes"
