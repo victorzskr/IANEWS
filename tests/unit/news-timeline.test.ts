@@ -12,7 +12,10 @@ import {
   hasDuplicateNews
 } from "../../src/modules/news/application/news-curation";
 import { newsItemSchema, type NewsItem } from "../../src/modules/news/domain/news-item";
-import { getNewsItems } from "../../src/modules/news/infrastructure/json-news-repository";
+import {
+  getNewsItems,
+  getNewsLastUpdatedAt
+} from "../../src/modules/news/infrastructure/json-news-repository";
 
 const newsItems: NewsItem[] = [
   {
@@ -75,6 +78,11 @@ describe("news domain", () => {
     expect(repositoryItems.every((item) => newsItemSchema.safeParse(item).success)).toBe(
       true
     );
+  });
+
+  it("exposes the json file last update date", () => {
+    expect(getNewsLastUpdatedAt()).toBeInstanceOf(Date);
+    expect(Number.isNaN(getNewsLastUpdatedAt().getTime())).toBe(false);
   });
 
   it("keeps repository news free of duplicate ids, urls and titles", () => {
