@@ -1,5 +1,77 @@
 [
   {
+    "id": "2026-05-13-github-copilot-cloud-agent-rest-api",
+    "title": "GitHub permite lanzar tareas de Copilot cloud agent via REST API",
+    "summary": "GitHub lanzo en public preview una REST API para iniciar y seguir tareas de Copilot cloud agent desde scripts, herramientas internas y automatizaciones.",
+    "whyItMatters": "Abre la puerta a flujos agenticos integrados en pipelines reales, desde refactors programados hasta automatizacion multi-repo con PRs generados por Copilot.",
+    "source": "GitHub",
+    "sourceAccount": "GitHub Changelog",
+    "url": "https://github.blog/changelog/2026-05-13-start-copilot-cloud-agent-tasks-via-the-rest-api/",
+    "publishedAt": "2026-05-13T16:00:00.000Z",
+    "confidence": "High",
+    "tags": [
+      "github",
+      "copilot",
+      "agents",
+      "api",
+      "automation"
+    ]
+  },
+  {
+    "id": "2026-05-13-openai-tanstack-npm-supply-chain",
+    "title": "OpenAI detalla su respuesta al ataque supply-chain de TanStack npm",
+    "summary": "OpenAI publico su investigacion y respuesta al ataque de supply chain sobre paquetes npm de TanStack, incluyendo rotacion de credenciales y refuerzo de controles CI/CD.",
+    "whyItMatters": "El incidente aterriza riesgos practicos para equipos que dependen de npm, firma de binarios, validacion de dependencias y proteccion de pipelines de desarrollo.",
+    "source": "Blog",
+    "sourceAccount": "OpenAI",
+    "url": "https://openai.com/index/our-response-to-the-tanstack-npm-supply-chain-attack/",
+    "publishedAt": "2026-05-13T15:00:00.000Z",
+    "confidence": "High",
+    "tags": [
+      "openai",
+      "security",
+      "supply-chain",
+      "npm",
+      "ci-cd"
+    ]
+  },
+  {
+    "id": "2026-05-12-vercel-firewall-cli",
+    "title": "Vercel lleva la gestion del Firewall al CLI",
+    "summary": "Vercel anadio el comando `vercel firewall` para gestionar reglas, bloqueos IP, bypasses, attack mode y mitigaciones desde terminal.",
+    "whyItMatters": "Acerca controles de seguridad e infraestructura al flujo de desarrollo y facilita que agentes o automatizaciones operen defensas sin salir del CLI.",
+    "source": "Release Notes",
+    "sourceAccount": "Vercel",
+    "url": "https://vercel.com/changelog/manage-vercel-firewall-in-the-cli",
+    "publishedAt": "2026-05-12T16:00:00.000Z",
+    "confidence": "High",
+    "tags": [
+      "vercel",
+      "security",
+      "cli",
+      "agents",
+      "infrastructure"
+    ]
+  },
+  {
+    "id": "2026-05-12-vercel-ai-gateway-claude-opus-4-7-fast-mode",
+    "title": "Vercel AI Gateway activa fast mode para Claude Opus 4.7",
+    "summary": "Vercel habilito en research preview un modo rapido para `anthropic/claude-opus-4.7` en AI Gateway, con mayor velocidad de salida y configuracion via providerOptions.",
+    "whyItMatters": "La latencia del modelo es critica para agentes, copilots y productos interactivos; un gateway con modos de velocidad permite ajustar mejor coste, UX y rendimiento.",
+    "source": "Release Notes",
+    "sourceAccount": "Vercel",
+    "url": "https://vercel.com/changelog/fast-mode-for-opus-4-7-available-on-ai-gateway",
+    "publishedAt": "2026-05-12T15:00:00.000Z",
+    "confidence": "High",
+    "tags": [
+      "vercel",
+      "anthropic",
+      "ai-gateway",
+      "latency",
+      "developer-tools"
+    ]
+  },
+  {
     "id": "2026-05-08-openai-realtime-voice-models",
     "title": "OpenAI lanza nuevos modelos realtime de voz en la API",
     "summary": "OpenAI presento GPT-Realtime-2, GPT-Realtime-Translate y GPT-Realtime-Whisper para agentes de voz, traduccion en vivo y transcripcion streaming.",
